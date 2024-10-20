@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/news_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:newsapp/Screens/home_screen.dart';
+import 'package:newsapp/cubit/news__cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return BlocProvider(
+      create: (context) => NewsCubit()..getSources(),
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: NewsScreen());
+        home: HomeScreen(),
+      ),
+    );
   }
 }
-

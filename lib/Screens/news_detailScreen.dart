@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'news_repository.dart';
+// import '../Network/news_repository.dart';
 
 class NewsDetailScreen extends StatefulWidget {
   final String content;
